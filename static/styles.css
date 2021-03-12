@@ -1,0 +1,33 @@
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav {
+    background-color: #3b4252 !important;
+}
+
+h1, h5, p {
+    color: #d8dee9;
+}
+
+.background {
+    background-color: #4c566a !important; 
+}
+
+.darker {
+    background-color: #3b4252 !important;
+}
+
+.button {
+    background-color: #88c0d0 !important;
+}
+
+footer, .footer {
+    background-color: #e5e9f0 !important;
+    color: #2e3440;
+}
+
+.bottom {
+    color: #2e3440;
+}
