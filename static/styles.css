@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
 img {
     max-width: 100%;
     max-height: 100%;
@@ -30,4 +36,80 @@ footer, .footer {
 
 .bottom {
     color: #2e3440;
+}
+
+.song-player{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    padding: 6px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: #d8dee9;
+    text-align: center;
+}
+
+.song-player h5 {
+    font-size: 1.5rem;
+    margin: 12px 0;
+    color: #2e3440;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.song-player img {
+    width: 80%;
+}
+
+.media-buttons button{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 16px;
+    border-radius: 90px;
+    background-color: #E1E6EC;
+    text-align: left;
+    margin: 10px 9px;
+    border: none;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+    /*background:linear-gradient(-45deg,#a2b1c6,#fff);*/
+}
+
+.media-buttons button:active{
+    background: #E1E6EC;
+    box-shadow: inset 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+}
+
+.media-buttons button img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 42%;
+    height: 42%;
+}
+
+.level{
+    width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #E1E6EC;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+    border-radius: 50px;
+    margin: 12px 0;
+}
+.level::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #A2B1C6;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 5px  #e5e9f0  ;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    border-radius: 90px;
+}
+.level::-moz-range-thumb{
+    width: 50px;
+    height: 50px;
 }

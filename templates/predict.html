@@ -6,14 +6,25 @@
 
 {% block main %}
 <div class="section center" id="demo">
-    <h5 class="center">Playlist generated!</h5>
-    <img class="center" style="object-fit: contain;" src={{ url_for('video_feed') }}>
-    <br><br>
+	<h5 class="center">Playlist generated!</h5>
+	<img class="center" style="object-fit: contain;" src={{ url_for('video_feed') }}>
+	<br><br>
 
-    <h6>Welcome {{ name }}! You look {{ emotion }}. Here's a generated playlist based on your mood!</h6>
-    <br><br>
+	<h6>Welcome {{ name }}! You look {{ emotion }}. Here's a generated playlist based on your mood!</h6>
+	<br><br>
 
-    <!-- Song player -->
-    
+	<!-- Song player -->
+	<div class="song-player">
+		<div class="wrapper center">
+			<h5>Music Recommendations</h5>
+			<img src="../static/img/robot.png">
+			<input id="range" class="level" type="range" value="0" min="0">
+			<div class="media-buttons">
+				<button id="pre"><img src="../static/img/rewind.png"></button>
+					<button id="pre"><img src="../static/img/play.png"></button>
+						<button id="pre"><img src="../static/img/fast-forward.png"></button>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}
