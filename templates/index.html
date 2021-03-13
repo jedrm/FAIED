@@ -14,6 +14,7 @@
 </head>
 
 <body class="darker">
+
   <nav class="nav" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Team
         AI Strikers</a>
@@ -35,60 +36,18 @@
         <h5 class="header col s12 light">Generate a playlist based on your mood</h5>
       </div>
       <div class="row center">
-        <a href="#demo" id="get-started" class="btn-large waves-effect waves-light">Get Started</a>
+        {% block button %} {% endblock %}
       </div>
       <br><br>
 
     </div>
   </div>
 
-
   <div class="container background">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">insert_emoticon</i></h2>
-            <h5 class="center">Computer Vision Technology</h5>
-
-            <p class="light">It uses OpenCV and a Keras model to do face recognition and emotion detection.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Can Handle Multiple Users</h5>
-
-            <p class="light">By having a face recognition technology, the app is able to distinguish different users and
-              play suggested playlist based on their current emotion and liked songs.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">important_devices</i></h2>
-            <h5 class="center">Internet of Things</h5>
-
-            <p class="light">Due to the lightweight models, the app can be implemented into smart mirrors, home cameras,
-              and other Internet of Things that can support computer vision.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- Camera section -->
-    <div class="section center" id="demo">
-      <h5 class="center">Try it out!</h3>
-        <img class="center" style="object-fit: contai;" src="{{ url_for('video_feed') }}">
-        <br><br>
-        <a class="waves-effect waves-light btn-large" id="generate">Generate personalized playlist</a>
-    </div>
-
-    <br><br>
+    {% block main %}
+    {% endblock %}
   </div>
+
 
   <footer class="page-footer footer">
     <div class="container">
@@ -110,21 +69,23 @@
           </ul>
         </div>
 
-        
+
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container bottom">
         Made by <a class="bottom text-lighten-3" href="http://materializecss.com">Materialize</a>
+        <br>&copy;2021 Alexa Urrea, Jed Rendo Magracia, Neelima Jyothiraj
       </div>
     </div>
   </footer>
 
 
-  <!--  Scripts-->
+  <!--  Scripts  -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../static/js/materialize.js"></script>
   <script src="../static/js/init.js"></script>
+  <script src="../static/script.js"></script>
 
 </body>
 

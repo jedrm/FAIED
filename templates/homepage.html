@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block button %}
+<a href="#demo" id="get-started" class="btn-large waves-effect waves-light">Get Started</a>
+{% endblock %}
+
+{% block main %}
+<div class="section">
+
+	<!--   Icon Section   -->
+	<div class="row">
+		<div class="col s12 m4">
+			<div class="icon-block">
+				<h2 class="center light-blue-text"><i class="material-icons">insert_emoticon</i></h2>
+				<h5 class="center">Computer Vision Technology</h5>
+
+				<p class="light">It uses OpenCV and a Keras model to do face recognition and emotion detection.</p>
+			</div>
+		</div>
+
+		<div class="col s12 m4">
+			<div class="icon-block">
+				<h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+				<h5 class="center">Can Handle Multiple Users</h5>
+
+				<p class="light">By having a face recognition technology, the app is able to distinguish different
+					users and
+					play suggested playlist based on their current emotion and liked songs.</p>
+			</div>
+		</div>
+
+		<div class="col s12 m4">
+			<div class="icon-block">
+				<h2 class="center light-blue-text"><i class="material-icons">important_devices</i></h2>
+				<h5 class="center">Internet of Things</h5>
+
+				<p class="light">Due to the lightweight models, the app can be implemented into smart mirrors, home
+					cameras,
+					and other Internet of Things that can support computer vision.</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- Camera section -->
+<div class="section center" id="demo">
+	<h5 class="center">Try it out!</h3>
+		<img class="center" style="object-fit: contain;" src="{{ url_for('video_feed') }}">
+		<br><br>
+		<a class="waves-effect waves-light btn-large" id="generate" href="/predict">Generate personalized playlist</a>
+</div>
+
+<br><br>
+{% endblock %}
