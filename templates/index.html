@@ -8,85 +8,85 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="../static/styles.css" type="text/css" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./static/styles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body class="darker">
+  <script src="./static/script.js"></script>
+  <div class="content">
+    <nav class="nav" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Team
+          AI Strikers</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#demo">Demo</a></li>
+        </ul>
 
-  <nav class="nav" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Team
-        AI Strikers</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#demo">Demo</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#demo">Demo</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot darker" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center">Project Title</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Generate a playlist based on your mood</h5>
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#demo">Demo</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
-      <div class="row center">
-        {% block button %} {% endblock %}
+    </nav>
+    <div class="section no-pad-bot darker" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h1 class="header center">Project Title</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Generate a playlist based on your mood</h5>
+        </div>
+        <div class="row center">
+          {% block button %} {% endblock %}
+        </div>
+        <br><br>
+
       </div>
-      <br><br>
-
     </div>
-  </div>
 
-  <div class="container background">
-    {% block main %}
-    {% endblock %}
-    <br>
-  </div>
+    <div class="container background">
+      {% block main %}
+      {% endblock %}
+      <br>
+    </div>
 
 
-  <footer class="page-footer footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l8 s12">
-          <h5 class="footer">Team Description</h5>
-          <p class="footer">Do some placeholder text that signifies team description. The quick brown
-            fox jumped over the lazy dog.</p>
+    <footer class="page-footer footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l8 s12">
+            <h5 class="footer">Team Description</h5>
+            <p class="footer">Do some placeholder text that signifies team description. The quick brown
+              fox jumped over the lazy dog.</p>
+
+
+          </div>
+          <div class="col l3 s12">
+            <h5 class="footer">Members</h5>
+            <ul>
+              <li><a class="footer" href="#!">Mentor: Purvesh</a></li>
+              <li><a class="footer" href="#!">Neelima</a></li>
+              <li><a class="footer" href="#!">Alexa</a></li>
+              <li><a class="footer" href="#!">Jed Rendo Magracia</a></li>
+            </ul>
+          </div>
 
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="footer">Members</h5>
-          <ul>
-            <li><a class="footer" href="#!">Mentor: Purvesh</a></li>
-            <li><a class="footer" href="#!">Neelima</a></li>
-            <li><a class="footer" href="#!">Alexa</a></li>
-            <li><a class="footer" href="#!">Jed Rendo Magracia</a></li>
-          </ul>
+      </div>
+      <div class="footer-copyright">
+        <div class="container bottom">
+          Made by <a class="bottom text-lighten-3" href="http://materializecss.com">Materialize</a>
+          <br>&copy;2021 Alexa Urrea, Jed Rendo Magracia, Neelima Jyothiraj
         </div>
-
-
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container bottom">
-        Made by <a class="bottom text-lighten-3" href="http://materializecss.com">Materialize</a>
-        <br>&copy;2021 Alexa Urrea, Jed Rendo Magracia, Neelima Jyothiraj
-      </div>
-    </div>
-  </footer>
-
+    </footer>
+  </div>
 
   <!--  Scripts  -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../static/js/materialize.js"></script>
-  <script src="../static/js/init.js"></script>
-  <script src="../static/script.js"></script>
+  <script src="./static/js/materialize.js"></script>
+  <script src="./static/js/init.js"></script>
 
 </body>
 

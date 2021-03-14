@@ -48,11 +48,16 @@ footer, .footer {
     border-radius: 8px;
     background-color: #d8dee9;
     text-align: center;
+    color: #2e3440;
 }
 
 .song-player h5 {
     font-size: 1.5rem;
     margin: 12px 0;
+    color: #2e3440;
+}
+
+.song-player p {
     color: #2e3440;
 }
 
@@ -101,6 +106,7 @@ footer, .footer {
     border-radius: 50px;
     margin: 12px 0;
 }
+
 .level::-webkit-slider-thumb{
     -webkit-appearance: none;
     background-color: #A2B1C6;
@@ -109,7 +115,16 @@ footer, .footer {
     height: 15px; /* Slider handle height */
     border-radius: 90px;
 }
+
 .level::-moz-range-thumb{
     width: 50px;
     height: 50px;
+}
+
+.preload {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #e5e9f0;
 }

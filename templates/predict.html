@@ -17,12 +17,15 @@
 	<div class="song-player">
 		<div class="wrapper center">
 			<h5>Music Recommendations</h5>
-			<img src="../static/img/robot.png">
-			<input id="range" class="level" type="range" value="0" min="0">
+			<img src="./static/img/robot.png">
+			<p id="title">title.mp3</p>
+			<p id="artist">Artist name</p>
+			<input id="slider" class="level" type="range" value="0" min="0" max="" onchange="change_progress_bar()">
+			<audio id="song" src="/templates/music.mp3" type="audio/mp3"></audio>
 			<div class="media-buttons">
-				<button id="pre"><img src="../static/img/rewind.png"></button>
-					<button id="pre"><img src="../static/img/play.png"></button>
-						<button id="pre"><img src="../static/img/fast-forward.png"></button>
+				<button onclick="previous_song()"><img id="pre" src="./static/img/rewind.png"></button>
+				<button onclick="play_pause()"><img id="play" src="./static/img/play.png"></button>
+				<button onclick="next_song()"><img id="next" src="./static/img/fast-forward.png"></button>
 			</div>
 		</div>
 	</div>

@@ -1,10 +1,13 @@
-from flask import Flask, render_template, Response, jsonify
+from flask import Flask, render_template, Response, jsonify, url_for
 import os
 import numpy as np 
 import cv2
-import json
+import sqlite3
 
 app = Flask(__name__)
+
+conn = sqlite3.connect("database.py")
+curr = conn.cursor()
 
 # Connect camera to the application
 camera = cv2.VideoCapture(0)
@@ -19,11 +22,6 @@ def gen_frames():
             frame = buffer.tobytes()
             yield(b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-def gen_pic():
-    success, frame = camera.read()
-    ret, buffer = cv2.imencode(".jpg", frame)
-    frame = buffer.tobytes()
-    yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 @app.route('/')
 def index():
@@ -35,10 +33,6 @@ def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-@app.route('/show_pic')
-def show_pic():
-    return Response(show_pic(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
 @app.route('/predict')
 def predict_playlist():
     # TODO
@@ -46,11 +40,19 @@ def predict_playlist():
 
     # TODO
     # Predict the person and emotion
-    name = "Jed"
+    name = "jed"
     emotion = "happy"
+    cwd = os.getcwd()
+    # path = os.path.join(cwd, "templates", "music", "jed", "emotion")
+    # song_list = os.listdir(path)
 
-    # TODO
-    # Return template with variables
+    # Create a JSON of name, emotion, and songs to play
+    # data = {
+    #     "user": name,
+    #     "mood": emotion,
+    #     "songs": song_list
+    # }
+
     return render_template("predict.html", name=name, emotion=emotion)
 
 if __name__ == "main":
