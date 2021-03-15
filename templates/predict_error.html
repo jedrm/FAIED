@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block button %}
+<a href="/" id="get-started" class="btn-large waves-effect waves-light">Start Over</a>
+{% endblock %}
+
+{% block main %}
+<div class="section center" id="demo">
+	<h5 class="center">Playlist generated!</h5>
+	<img class="center" style="object-fit: contain;" src={{ url_for('video_feed') }}>
+	<br><br>
+
+	<h6>{{ error_message }}</h6>
+	<br><br>
+
+</div>
+{% endblock %}

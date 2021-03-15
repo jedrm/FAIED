@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block button %}
+<a href="/" id="get-started" class="btn-large waves-effect waves-light">Start Over</a>
+{% endblock %}
+
+{% block main %}
+<div class="section center" id="demo">
+    <h5 class="center">Playlist generated!</h5>
+    <img class="center" style="object-fit: contain;" src={{ url_for('video_feed') }}>
+    <br><br>
+
+    <h6>We don't recognize you in our database, but here are some songs that our users listen to when they look {{
+        emotion }} since you look {{ emotion }}! You look {{ emotion }}. Here's a generated playlist based on your mood!
+    </h6>
+    <br><br>
+
+    {% for song in songs %}
+    <iframe width="560" height="315" src="{{ song }}" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    {% endfor %}
+</div>
+{% endblock %}
