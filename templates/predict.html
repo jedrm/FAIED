@@ -13,25 +13,6 @@
 	<h6>Welcome {{ name }}! You look {{ emotion }}. Here's a generated playlist based on your mood!</h6>
 	<br><br>
 
-	<!-- Song player -->
-	<!-- <div class="song-player">
-		<div class="wrapper center">
-			<h5>Music Recommendations</h5>
-			<img src="./static/img/robot.png">
-			<p id="title">title.mp3</p>
-			<p id="artist">Artist name</p>
-			<input id="slider" class="level" type="range" value="0" min="0" max="" onchange="change_progress_bar()">
-			<audio id="song" src="/templates/music.mp3" type="audio/mp3"></audio>
-			<div class="media-buttons">
-				<button onclick="previous_song()"><img id="pre" src="./static/img/rewind.png"></button>
-				<button onclick="play_pause()"><img id="play" src="./static/img/play.png"></button>
-				<button onclick="next_song()"><img id="next" src="./static/img/fast-forward.png"></button>
-			</div>
-		</div>
-	</div> -->
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/i6WvvstJ-Dw" frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen></iframe>
 	{% for song in songs %}
 	<iframe width="560" height="315" src="{{ song }}" frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
