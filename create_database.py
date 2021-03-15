@@ -5,7 +5,7 @@ import os
 conn = sqlite3.connect("database.db")
 curr = conn.cursor()
 
-table_names = ["transactions", "users", "emotions", "songs"]
+table_names = ["transactions", "users", "emotions"]
 for table in table_names:
     curr.execute(f"DROP TABLE IF EXISTS {table}")
 
@@ -69,7 +69,7 @@ for csv_file in csv_files:
         reader = csv.reader(f)
         for row in reader:
             emotion = row[0]
-            link = row[1]
+            link = row[1].replace("watch?v=", "embed/")
 
             curr.execute("SELECT user_id FROM users WHERE first_name=?", (user,))
             user_id = int(curr.fetchone()[0])

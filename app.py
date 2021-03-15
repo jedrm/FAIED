@@ -3,11 +3,13 @@ import os
 import numpy as np 
 import cv2
 import sqlite3
+import random
+import face_recognition
+import time
+import pickle
+import imutils
 
 app = Flask(__name__)
-
-conn = sqlite3.connect("database.py")
-curr = conn.cursor()
 
 # Connect camera to the application
 camera = cv2.VideoCapture(0)
@@ -35,25 +37,45 @@ def video_feed():
 
 @app.route('/predict')
 def predict_playlist():
-    # TODO
-    # Preprocess the frame
+    # Face detection section
+    # Set the facial detection algorithm
+    casc_path_face = "haarcascase_frontalface_alt2.xml"
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + casc_path_face)
+    data = pickle.loads(open("face_enc", "rb").read())
 
-    # TODO
-    # Predict the person and emotion
-    name = "jed"
-    emotion = "happy"
-    cwd = os.getcwd()
-    # path = os.path.join(cwd, "templates", "music", "jed", "emotion")
-    # song_list = os.listdir(path)
+    # Get the encoding for 
+    ret, frame = camera.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    encoding = face_recognition.face_encodings(rgb)[0]
 
-    # Create a JSON of name, emotion, and songs to play
-    # data = {
-    #     "user": name,
-    #     "mood": emotion,
-    #     "songs": song_list
-    # }
+    # Finding the match
+    matches = face_recognition.compare_faces(data["encodings"], encoding)
+    name = "Unknown"
+    if True in matches:
+        matched_index = matches.index(True)
+        name = data["names"][matched_index]
 
-    return render_template("predict.html", name=name, emotion=emotion)
+    emotion = "sad"
+
+    # From name and emotion, gather a list of songs
+    conn = sqlite3.connect(os.path.join(os.getcwd(), "database.db"))
+    curr = conn.cursor()
+    curr.execute(
+        """
+        SELECT transactions.song_link 
+        FROM transactions 
+        INNER JOIN users ON users.user_id = transactions.user_id 
+        INNER JOIN emotions ON emotions.emotion_id = transactions.emotion_id
+        WHERE emotions.emotion=? AND users.first_name=?
+        """,
+        (emotion, name)
+    )
+    song_list = curr.fetchall()
+    songs = [song[0] for song in song_list]
+    songs = random.sample(songs, 5)
+
+    return render_template("predict.html", name=name, emotion=emotion, songs=songs)
 
 if __name__ == "main":
     app.run(debug=True)

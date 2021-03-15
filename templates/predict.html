@@ -14,7 +14,7 @@
 	<br><br>
 
 	<!-- Song player -->
-	<div class="song-player">
+	<!-- <div class="song-player">
 		<div class="wrapper center">
 			<h5>Music Recommendations</h5>
 			<img src="./static/img/robot.png">
@@ -28,6 +28,14 @@
 				<button onclick="next_song()"><img id="next" src="./static/img/fast-forward.png"></button>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/i6WvvstJ-Dw" frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe>
+	{% for song in songs %}
+	<iframe width="560" height="315" src="{{ song }}" frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe>
+	{% endfor %}
 </div>
 {% endblock %}
