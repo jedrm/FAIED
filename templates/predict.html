@@ -14,9 +14,11 @@
 	<br><br>
 
 	{% for song in songs %}
-	<iframe width="560" height="315" src="{{ song }}" frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen></iframe>
+	<div class="video-container">
+		<iframe src="{{ song }}" style="object-fit: contain;" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
 	{% endfor %}
 </div>
 {% endblock %}

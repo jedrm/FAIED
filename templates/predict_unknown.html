@@ -11,14 +11,16 @@
     <br><br>
 
     <h6>We don't recognize you in our database, but here are some songs that our users listen to when they look {{
-        emotion }} since you look {{ emotion }}! You look {{ emotion }}. Here's a generated playlist based on your mood!
+        emotion }} since you look {{ emotion }}! Here's a generated playlist based on your mood!
     </h6>
     <br><br>
 
     {% for song in songs %}
-    <iframe width="560" height="315" src="{{ song }}" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+    <div class="video-container">
+		<iframe src="{{ song }}" style="object-fit: contain;" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
     {% endfor %}
 </div>
 {% endblock %}
