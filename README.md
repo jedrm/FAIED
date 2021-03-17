@@ -1,4 +1,4 @@
-# FAIED
+# FAiED
 
 It is a computer vision program that is made in Python dealing with recommending songs based on current user emotion.
 
