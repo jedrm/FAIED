@@ -52,7 +52,7 @@ def video_feed():
 def predict_playlist():
     """ Face detection section """
     # Load emotion detection model
-    classifier = load_model("EmotionDetectionModel.h5")
+    classifier = load_model("emotion_detection.h5")
 
     # Set the facial detection algorithm
     casc_path_face = "haarcascade_frontalface_default.xml"
