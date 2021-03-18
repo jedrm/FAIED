@@ -5,6 +5,7 @@ It is a computer vision program that is made in Python dealing with recommending
 ## Description
 
 It uses computer vision to do two things: to recognize and identify the user in front of the camera and to identify and detect the user's emotions. The information is sent to the program and pulls up songs the user usually listens to when they are feeling a certain emotion. If the user is not known, the program will pull up songs that known users usually listen to when they feel the same emotion.
+Check out the demo [here] (https://youtu.be/q1TP3IaOYyg)!
 
 ![Example](https://user-images.githubusercontent.com/45746064/111519609-a7988200-872d-11eb-957e-88ec18adb931.png)
 
