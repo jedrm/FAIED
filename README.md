@@ -26,3 +26,13 @@ Run the following code on the console to run the program.
 `flask run --host=localhost`
 
 The command runs the Flask app locally and you can try out the computer vision program.
+
+## Members
+
+Mentor:
+- [Purvesh Sharma](https://www.linkedin.com/in/sharmapurvesh/)
+
+Members:
+- [Jed Rendo Magracia](https://www.linkedin.com/in/jedrendomagracia/)
+- [Neelima Jyothiraj](https://www.linkedin.com/in/neelima-jyothiraj/)
+- [Alexa Urrea](https://www.linkedin.com/in/alexa-urrea-45b0961b8/)
